@@ -1,13 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatting Apps</title>
+    <title>আমাদের গ্রাম</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7c2c" width="1200" height="600"/><path fill="%23367021" d="M0 400 Q300 350 600 400 T1200 400 V600 H0 Z"/><circle fill="%23FFD700" cx="150" cy="100" r="60"/><rect fill="%238B4513" x="400" y="300" width="80" height="150"/><polygon fill="%23DC143C" points="440,300 360,250 520,250"/><rect fill="%238B4513" x="700" y="320" width="60" height="130"/><polygon fill="%23DC143C" points="730,320 670,280 790,280"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            color: #2d5016;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #4a7c2c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .about-content {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #4a7c2c;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>
-        hello world
-    </p>
+    <header>
+        <nav>
+            <div class="logo">🌾 আমাদের গ্রাম</div>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#features">বৈশিষ্ট্য</a></li>
+                <li><a href="#gallery">গ্যালারি</a></li>
+                <li><a href="#about">পরিচিতি</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>স্বাগতম আমাদের সুন্দর গ্রামে</h1>
+        <p>প্রকৃতির কোলে, শান্তির নীড়ে</p>
+    </section>
+
+    <div class="container">
+        <section class="section" id="features">
+            <h2>আমাদের গ্রামের বৈশিষ্ট্য</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🌾</div>
+                    <h3>কৃষি সম্পদ</h3>
+                    <p>উর্বর জমিতে ফসল ফলানো হয়। ধান, গম, পাট এবং বিভিন্ন সবজি আমাদের প্রধান ফসল।</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏫</div>
+                    <h3>শিক্ষা প্রতিষ্ঠান</h3>
+                    <p>গ্রামে রয়েছে প্রাথমিক ও মাধ্যমিক বিদ্যালয়। শিক্ষার আলোয় আলোকিত হচ্ছে নতুন প্রজন্ম।</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>স্বাস্থ্য সেবা</h3>
+                    <p>স্বাস্থ্যকেন্দ্র এবং অভিজ্ঞ ডাক্তারদের মাধ্যমে গ্রামবাসীদের সেবা প্রদান করা হয়।</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>সাংস্কৃতিক ঐতিহ্য</h3>
+                    <p>বাউল গান, পালা গান, এবং বিভিন্ন লোকজ সংস্কৃতি আমাদের গ্রামের পরিচয়।</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌳</div>
+                    <h3>প্রাকৃতিক সৌন্দর্য</h3>
+                    <p>সবুজ মাঠ, নদী, পুকুর এবং গাছপালায় ভরপুর আমাদের গ্রাম।</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>সামাজিক বন্ধন</h3>
+                    <p>পারস্পরিক সহযোগিতা ও ভালোবাসায় গড়ে উঠেছে আমাদের গ্রামীণ সমাজ।</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="gallery">
+            <h2>গ্রামের দৃশ্যাবলী</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#87CEEB" width="400" height="300"/>
+                        <circle fill="#FFD700" cx="350" cy="50" r="40"/>
+                        <rect fill="#228B22" y="200" width="400" height="100"/>
+                        <path fill="#32CD32" d="M0 200 Q100 180 200 200 T400 200 V300 H0 Z"/>
+                        <rect fill="#8B4513" x="80" y="150" width="60" height="100"/>
+                        <polygon fill="#DC143C" points="110,150 50,110 170,110"/>
+                    </svg>
+                </div>
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#87CEEB" width="400" height="300"/>
+                        <rect fill="#228B22" y="150" width="400" height="150"/>
+                        <rect fill="#8B4513" x="50" y="100" width="80" height="120"/>
+                        <rect fill="#FFD700" x="70" y="120" width="20" height="20"/>
+                        <rect fill="#FFD700" x="100" y="120" width="20" height="20"/>
+                        <rect fill="#8B4513" x="90" y="180" width="30" height="40"/>
+                    </svg>
+                </div>
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#87CEEB" width="400" height="300"/>
+                        <ellipse fill="#4682B4" cx="200" cy="200" rx="150" ry="80"/>
+                        <rect fill="#228B22" y="240" width="400" height="60"/>
+                        <circle fill="#2E8B57" cx="80" cy="240" r="40"/>
+                        <circle fill="#2E8B57" cx="320" cy="240" r="50"/>
+                    </svg>
+                </div>
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#87CEEB" width="400" height="300"/>
+                        <rect fill="#FFD700" y="200" width="400" height="100"/>
+                        <rect fill="#8B4513" x="150" y="220" width="15" height="80"/>
+                        <circle fill="#228B22" cx="157" cy="210" r="35"/>
+                        <rect fill="#8B4513" x="250" y="220" width="15" height="80"/>
+                        <circle fill="#228B22" cx="257" cy="210" r="35"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <h2>আমাদের গ্রাম সম্পর্কে</h2>
+            <div class="about-content">
+                <p style="margin-bottom: 1rem;">
+                    আমাদের গ্রাম বাংলাদেশের একটি ঐতিহ্যবাহী এবং সুন্দর গ্রাম। এখানে বসবাস করেন প্রায় ৫ হাজার মানুষ। গ্রামের মানুষ অত্যন্ত সহজ-সরল এবং পরিশ্রমী। কৃষিকাজ এখানকার প্রধান জীবিকা।
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    প্রকৃতির অপার সৌন্দর্যে ভরপুর এই গ্রামে রয়েছে সবুজ ধানক্ষেত, নদী, পুকুর, এবং বিশাল বটগাছ। গ্রামের বুক দিয়ে বয়ে গেছে একটি ছোট নদী যা বর্ষাকালে পানিতে ভরে ওঠে।
+                </p>
+                <p>
+                    শিক্ষা, স্বাস্থ্য এবং সামাজিক উন্নয়নে আমরা প্রতিশ্রুতিবদ্ধ। আধুনিকতার সাথে তাল মিলিয়ে চলার পাশাপাশি আমরা আমাদের ঐতিহ্য ও সংস্কৃতিকে সযত্নে রক্ষা করছি।
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; ২০২৫ আমাদের গ্রাম। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p style="margin-top: 0.5rem;">সবুজ গ্রাম, সুন্দর বাংলাদেশ 🇧🇩</p>
+    </footer>
 </body>
 </html>
