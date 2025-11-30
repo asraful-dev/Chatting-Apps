@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের নদীতীরের গ্রাম</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4f 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .village-scene {
+            width: 100%;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .village-scene svg {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            border-radius: 15px;
+        }
+
+        .scene-title {
+            text-align: center;
+            padding: 3rem 2rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .scene-title h1 {
+            font-size: 2.5rem;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+        }
+
+        .scene-title p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .info-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            color: #1a4d2e;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #2d7a4f;
+            padding-bottom: 0.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #2d7a4f;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-box h3 {
+            color: #1a4d2e;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-box p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #1a4d2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .scene-title h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .legend {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .legend h3 {
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+        }
+
+        .legend-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🏞️ নদীতীরের গ্রাম</div>
+            <ul class="nav-links">
+                <li><a href="#village">গ্রামের দৃশ্য</a></li>
+                <li><a href="#features">বৈশিষ্ট্য</a></li>
+                <li><a href="#about">বিস্তারিত</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scene-title">
+        <h1>আমাদের নদীতীরের গ্রাম</h1>
+        <p>নদী, ফসলের মাঠ আর গ্রামীণ জীবনের সুন্দর সমন্বয়</p>
+    </div>
+
+    <div class="village-scene" id="village">
+        <svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+            <!-- Sky -->
+            <defs>
+                <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#B0E0E6;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="riverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#2E5F8A;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            
+            <rect fill="url(#skyGradient)" width="1400" height="800"/>
+            
+            <!-- Sun -->
+            <circle fill="#FFD700" cx="1250" cy="120" r="70" opacity="0.9"/>
+            <circle fill="#FFA500" cx="1250" cy="120" r="60" opacity="0.7"/>
+            
+            <!-- Clouds -->
+            <ellipse fill="white" cx="200" cy="100" rx="60" ry="30" opacity="0.8"/>
+            <ellipse fill="white" cx="230" cy="95" rx="50" ry="25" opacity="0.8"/>
+            <ellipse fill="white" cx="180" cy="95" rx="40" ry="20" opacity="0.8"/>
+            
+            <ellipse fill="white" cx="900" cy="130" rx="70" ry="35" opacity="0.7"/>
+            <ellipse fill="white" cx="940" cy="125" rx="55" ry="28" opacity="0.7"/>
+            
+            <!-- River (নদী - বাম দিকে) -->
+            <path d="M 0 300 Q 100 280 200 290 T 400 300 Q 500 310 600 300 T 800 310 Q 900 320 1000 310 L 1000 800 L 0 800 Z" 
+                  fill="url(#riverGradient)"/>
+            
+            <!-- River waves -->
+            <path d="M 50 320 Q 150 315 250 320" stroke="white" stroke-width="2" fill="none" opacity="0.3"/>
+            <path d="M 200 340 Q 300 335 400 340" stroke="white" stroke-width="2" fill="none" opacity="0.3"/>
+            <path d="M 400 360 Q 500 355 600 360" stroke="white" stroke-width="2" fill="none" opacity="0.3"/>
+            
+            <!-- River bank - গ্রামের মূল এলাকা (ডান পাশ) -->
+            <path d="M 1000 250 L 1400 250 L 1400 800 L 1000 800 Z" fill="#8FBC8F"/>
+            
+            <!-- Main road নদীর ওপর প্রান্তে -->
+            <rect x="1000" y="280" width="400" height="50" fill="#696969" opacity="0.8"/>
+            <line x1="1020" y1="305" x2="1380" y2="305" stroke="white" stroke-width="3" stroke-dasharray="30 20" opacity="0.8"/>
+            
+            <!-- Road side trees -->
+            <circle fill="#228B22" cx="1050" cy="260" r="25"/>
+            <rect fill="#8B4513" x="1045" y="260" width="10" height="50"/>
+            
+            <circle fill="#228B22" cx="1200" cy="260" r="25"/>
+            <rect fill="#8B4513" x="1195" y="260" width="10" height="50"/>
+            
+            <circle fill="#228B22" cx="1350" cy="260" r="25"/>
+            <rect fill="#8B4513" x="1345" y="260" width="10" height="50"/>
+            
+            <!-- Houses near road -->
+            <!-- House 1 -->
+            <rect fill="#D2691E" x="1050" y="360" width="100" height="80"/>
+            <polygon fill="#8B4513" points="1100,360 1030,320 1170,320"/>
+            <rect fill="#4A4A4A" x="1070" y="400" width="25" height="40"/>
+            <rect fill="#87CEEB" x="1110" y="380" width="20" height="20"/>
+            
+            <!-- House 2 -->
+            <rect fill="#CD853F" x="1200" y="370" width="90" height="70"/>
+            <polygon fill="#A0522D" points="1245,370 1180,335 1310,335"/>
+            <rect fill="#4A4A4A" x="1255" y="405" width="25" height="35"/>
+            <rect fill="#87CEEB" x="1210" y="390" width="20" height="20"/>
+            
+            <!-- House 3 -->
+            <rect fill="#D2691E" x="1080" y="480" width="85" height="75"/>
+            <polygon fill="#8B4513" points="1122,480 1065,450 1180,450"/>
+            <rect fill="#4A4A4A" x="1095" y="515" width="22" height="40"/>
+            <rect fill="#87CEEB" x="1135" y="500" width="18" height="18"/>
+            
+            <!-- Market/Shop -->
+            <rect fill="#FFD700" x="1250" y="480" width="100" height="60"/>
+            <rect fill="#8B4513" x="1275" y="510" width="25" height="30"/>
+            <text x="1270" y="505" font-size="14" fill="#000">দোকান</text>
+            
+            <!-- Crops field (ফসলের মাঠ - মাঝখানে নদী ও গ্রামের মধ্যে) -->
+            <rect x="1000" y="580" width="400" height="220" fill="#9ACD32"/>
+            
+            <!-- Rice paddies -->
+            <g opacity="0.6">
+                <line x1="1020" y1="600" x2="1380" y2="600" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="630" x2="1380" y2="630" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="660" x2="1380" y2="660" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="690" x2="1380" y2="690" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="720" x2="1380" y2="720" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="750" x2="1380" y2="750" stroke="#7CB342" stroke-width="2"/>
+                <line x1="1020" y1="780" x2="1380" y2="780" stroke="#7CB342" stroke-width="2"/>
+            </g>
+            
+            <!-- Small house in field -->
+            <rect fill="#8B4513" x="1150" y="640" width="60" height="50"/>
+            <polygon fill="#DC143C" points="1180,640 1135,615 1225,615"/>
+            <rect fill="#333" x="1165" y="665" width="15" height="25"/>
+            
+            <!-- Farmer -->
+            <circle fill="#FFA07A" cx="1280" cy="670" r="8"/>
+            <line x1="1280" y1="678" x2="1280" y2="700" stroke="#000080" stroke-width="3"/>
+            <line x1="1280" y1="685" x2="1270" y2="695" stroke="#000080" stroke-width="2"/>
+            <line x1="1280" y1="685" x2="1290" y2="695" stroke="#000080" stroke-width="2"/>
+            
+            <!-- Trees between river and crops -->
+            <circle fill="#228B22" cx="980" cy="450" r="35"/>
+            <circle fill="#2E8B57" cx="970" cy="440" r="30"/>
+            <rect fill="#8B4513" x="975" y="450" width="15" height="60"/>
+            
+            <circle fill="#228B22" cx="1020" cy="520" r="30"/>
+            <circle fill="#2E8B57" cx="1010" cy="512" r="25"/>
+            <rect fill="#8B4513" x="1015" y="520" width="12" height="50"/>
+            
+            <!-- Boat on river -->
+            <ellipse fill="#8B4513" cx="400" cy="380" rx="60" ry="20"/>
+            <rect fill="#8B4513" x="390" y="365" width="20" height="15"/>
+            
+            <!-- Birds -->
+            <path d="M 600 150 Q 610 145 620 150" stroke="#333" stroke-width="2" fill="none"/>
+            <path d="M 620 150 Q 630 145 640 150" stroke="#333" stroke-width="2" fill="none"/>
+            
+            <path d="M 800 180 Q 810 175 820 180" stroke="#333" stroke-width="2" fill="none"/>
+            <path d="M 820 180 Q 830 175 840 180" stroke="#333" stroke-width="2" fill="none"/>
+            
+            <!-- Bridge over river -->
+            <rect fill="#8B4513" x="700" y="295" width="200" height="15" rx="5"/>
+            <rect fill="#A0522D" x="730" y="280" width="10" height="30"/>
+            <rect fill="#A0522D" x="860" y="280" width="10" height="30"/>
+        </svg>
+
+        <div class="legend">
+            <h3>চিত্রের বিবরণ:</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4A90E2;"></div>
+                    <span>নদী (বাম পাশে)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #696969;"></div>
+                    <span>প্রধান সড়ক (নদীর ওপর প্রান্তে)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #D2691E;"></div>
+                    <span>ঘরবাড়ি (সড়কের পাশে)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9ACD32;"></div>
+                    <span>ফসলের মাঠ (নিচের অংশে)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #228B22;"></div>
+                    <span>গাছপালা</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8B4513;"></div>
+                    <span>নৌকা ও সেতু</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info-section" id="features">
+            <h2>🏞️ গ্রামের বৈশিষ্ট্য</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>🌊 নদী</h3>
+                    <p>গ্রামের পাশ ঘেঁষে বয়ে চলেছে সুন্দর নদী। এই নদী গ্রামবাসীদের জীবিকার প্রধান উৎস। মাছ ধরা, যোগাযোগ এবং সেচের কাজে নদীর পানি ব্যবহৃত হয়।</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>🛣️ যোগাযোগ ব্যবস্থা</h3>
+                    <p>নদীর ওপর প্রান্তে গড়ে উঠেছে গ্রামের প্রধান সড়ক। এই সড়ক দিয়ে শহর ও অন্যান্য গ্রামের সাথে যোগাযোগ রক্ষা হয়। নদীর উপর সেতু রয়েছে সহজ যাতায়াতের জন্য।</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>🏘️ ঘরবাড়ি</h3>
+                    <p>প্রধান সড়কের পাশে সাজানো গোছানো ভাবে গড়ে উঠেছে গ্রামের ঘরবাড়ি। টিনের চাল আর মাটির দেয়ালের ঘর, পাকা বাড়ি সব মিলিয়ে সুন্দর বসতি।</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>🌾 ফসলের মাঠ</h3>
+                    <p>নদীর পর থেকে শুরু হয়েছে বিস্তীর্ণ ফসলের মাঠ। ধান, গম, পাট, সবজি চাষ হয় এখানে। সবুজ ফসলের মাঠ গ্রামের সৌন্দর্য বাড়িয়ে দেয়।</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>🛒 বাজার ও দোকান</h3>
+                    <p>প্রধান সড়কের পাশে গড়ে উঠেছে ছোট বাজার এবং দোকানপাট। এখানে দৈনন্দিন প্রয়োজনীয় জিনিসপত্র কেনাকাটা করা যায়।</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>🌳 প্রাকৃতিক পরিবেশ</h3>
+                    <p>নদী ও ফসলের মাঠের মধ্যবর্তী স্থানে রয়েছে সবুজ গাছপালা। সড়কের দুই পাশে সারিবদ্ধ গাছ পরিবেশকে করেছে মনোরম।</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section" id="about">
+            <h2>📝 বিস্তারিত বিবরণ</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+                আমাদের গ্রামটি একটি আদর্শ নদীতীরবর্তী গ্রাম। <strong>গ্রামের পশ্চিম পাশে</strong> বয়ে চলেছে একটি সুন্দর নদী যা বর্ষাকালে পানিতে ভরে ওঠে এবং গ্রামবাসীদের জীবিকার অন্যতম উৎস। নদীতে মাছ ধরা হয়, নৌকা চলাচল করে এবং বাচ্চারা খেলাধুলা করে।
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+                <strong>নদীর ঠিক পূর্ব পাশে, নদীর ওপর প্রান্তে</strong> গড়ে উঠেছে গ্রামের মূল কার্যক্রম কেন্দ্র। এখানে একটি প্রশস্ত পাকা সড়ক রয়েছে যা শহর ও অন্যান্য গ্রামের সাথে যোগাযোগ রক্ষা করে। এই সড়কের দুই পাশে সাজানো গোছানোভাবে গড়ে উঠেছে গ্রামের ঘরবাড়ি, দোকানপাট এবং বাজার।
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+                সড়কের পাশেই রয়েছে বিভিন্ন ধরনের ঘরবাড়ি - কিছু টিনের চালের মাটির ঘর, কিছু পাকা বাড়ি। প্রতিটি বাড়ির আঙিনায় রয়েছে ছোট বাগান এবং গাছপালা। গ্রামের মানুষ অত্যন্ত সহজ-সরল এবং একে অপরের সাথে মিলেমিশে বসবাস করে।
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                <strong>গ্রামের দক্ষিণ দিকে</strong>, ঘরবাড়ির পর থেকে শুরু হয়েছে বিস্তীর্ণ ফসলের মাঠ। এখানে ধান, গম, পাট, সরিষা, বিভিন্ন ধরনের সবজি চাষ করা হয়। সবুজ ফসলের মাঠ যেন এক সবুজ গালিচা বিছিয়ে রেখেছে। মাঠের মাঝে মাঝে ছোট ছোট খামার বাড়ি এবং কৃষকদের বিশ্রামের জন্য ছোট কুঁড়েঘর রয়েছে।
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; ২০২৫ নদীতীরের গ্রাম। একটি আদর্শ বাংলাদেশী গ্রাম</p>
+        <p style="margin-top: 0.5rem;">🌾 নদী, ফসল আর গ্রামীণ জীবনের সুন্দর সমন্বয় 🏞️</p>
+    </footer>
+</body>
+</html>
